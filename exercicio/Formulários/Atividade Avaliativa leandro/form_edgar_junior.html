@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularios de Cadastro de Produtos</title>
+	<style type="text/css">
+		* {
+			font-family: arial;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			margin-top: 40px;
+		}
+		section{
+				width: 500px;
+				background-color: #56D0F0;
+				padding: 30px;
+				border-radius: 30px;
+
+		}
+	</style>
+</head>
+<body>
+		<section>
+			<form>
+				<fieldset>
+					<legend>Cadastro de produtos:</legend>
+					<table>
+						<tr>
+							<td><label>Nome do Produto:</label></td>
+							<td><input type="text" name="nome_p"></td>
+						</tr>
+						<tr>
+							<td><label>Descrição:</label></td>
+							<td><input type="textarea" name="desc_p"></td>
+						</tr>
+						<tr>
+							<td><label>ID do Produto:</label></td>
+							<td><input type="number" name="id_p"></td>
+						</tr>
+						<tr>
+							<td><label>Lote:</label></td>
+							<td><input type="number" name="lote_p"></td>
+						</tr>
+						<tr>
+							<td><label>Data de cadastro:</label></td>
+							<td><input type="date" name="dat_p"></td>
+						</tr>
+						<tr>
+							<td><label>tem em estoque?:</label></td>
+							<td><label>Sim:</label><input type="radio" name="radio1"></td>
+							<td><label>Não:</label><input type="radio" name="radio1"></td>
+						</tr>
+						<tr>
+							<td><label>Selecione o tipo:</label></td>
+							<td>
+								<select name="select_prod">
+										<option>-- Delecione o produto --</option>
+										<option value="1">Nootbook</option>
+										<option value="2">Mouse</option>
+										<option value="3">Pc/desktop</option>
+										<option value="4">Smartphones</option>
+										<option value="5">Mesa gamer</option>
+						</select>
+							</td>
+						<tr>
+							<td><label>Indicadores do produto:</label></td>
+						</tr>
+						<tr>
+							<td><label>Pouco Rendimento</label></td>
+							<td><input type="checkbox" name="check1"></td>
+						</tr>
+						<tr>
+							<td><label>Em alta:</label></td>
+							<td><input type="checkbox" name="check1"></td>
+						</tr>
+						<tr>
+							<td><label>Em tendencia:</label></td>
+							<td><input type="checkbox" name="check1"></td>
+						</tr>
+						<tr>
+							<td><label>Alta em vendas Futuras:</label></td>
+							<td><input type="checkbox" name="check1"></td>
+						</tr>
+						<tr>
+							<td>Carregar foto do produto:</td>
+							<td><input type="file" name=""></td>
+							<td><input type="image" name=""></td>
+						</tr>
+						<tr>
+							<td><input type="hidden" name=""></td>
+						</tr>
+					</table>
+					<h1>Autenticar cadastro:</h1>
+					<tr>
+						<td><label>Usuario</label></td>
+						<td><input type="text" name=""></td>
+						
+					</tr>
+					
+					<tr>
+						<td><label>senha</label></td>
+						<td><input type="password" name=""></td>
+					</tr>
+					<tr>
+						<input type="button" name="botao" value="voltar pag.">
+						<input type="reset" name="limpar">
+						<input type="submit" name="Enviar">
+					</tr>
+				</fieldset>
+
+			</form>
+		</section>
+</body>
+</html>
