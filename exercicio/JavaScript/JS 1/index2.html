@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+		<form name="TTtext">
+			<p>Entrada senha <input type="password" name="cx_senh" size="20" maxlength="30" onchange="alert('Voce digitou:' + cx_senh.value)"></p>
+			<p>Entrada de login <input type="text" name="cx_text" onchange="alert('você digitou a senha:' + cx_text.value)"></p>			
+		</form>
+
+
+		<form name="Tradio"
+			<p>Radio</p>
+			<p><input type="radio" name="t_radio" value="1"
+			onclick="document.bgColor='green'">Fundo verde
+
+			<p><input type="radio" name="t_radio" value="2"
+			onclick="document.bgColor='blueviolete'">fundo violeta
+
+			<p><input type="radio" name="t_radio" value="3"
+			onclick="document.bgColor='#ffff00'">Fundo amarelo
+			</p>
+		</form>
+		
+			<form name="Tbutton" method="POST">
+			<p>Digite um texto <input type="text" size="30" maxlengt="30" 
+			name="teste_botao" value=""></p>
+			
+			<p>Clique aqui no botão<input type="button"  
+			name="btn_teste" value="botão de teste" 
+			onclick="alert('Você digitou:' + Tbutton.teste_botao.value)"></p>
+		</form>
+<!---------------------------------------------- outras -------------------------------------------->
+		<script>
+				 function abrir(){
+					window.open("","Outra Janela", 'scrollbars=yes,resizeable=yes, width=650,					heigth=450')
+					
+					window.write("<html><head><title>essa é outra janela")
+					window.write("</title></head><body bgcolor='#ff00ff'>")
+					window.write("<br> ESSA É UMA OUTRA PAGINA<br>")
+					window.write("<br><JavaScript</br>")
+					window.write("</Body></html>")
+					window.close()
+				}
+	</script>
+		<body bgcolor="#FFFF00">
+		<p></p>
+		<p>ao clicar no botão uma nova página será aberta!</p>
+		<form name="form1" method="POST">
+			<br>
+			<input type="button" name="btn_abre" value="Nova janela" onclick="abrir()">
+</body>
+</html>

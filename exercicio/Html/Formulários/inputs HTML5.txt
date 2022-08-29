@@ -1,0 +1,27 @@
+HTML5 - type
+
+input type:
+
+datetime: yyyy-mm-dd hh:mm:ss
+datetime-local: 
+date: yyyy-mm-ss
+month: mm
+week: 23
+time: hh:mm:ss
+number: 199992222313
+range: 3...21
+email: @gmail.com
+url: www.senac.com
+------------------------------------------------
+
+pattern e expressões regulares:
+Telefone,cpf, cep e outros.
+
+pattern="\d{2}-\d{5}-\d{4}"
+
+explicando...
+\d{2} <= campo com 2 digitos
+- ou .<= separador com - ou .
+\d{5} <= outro campo com 5 digitos
+
+------------------------------------------------

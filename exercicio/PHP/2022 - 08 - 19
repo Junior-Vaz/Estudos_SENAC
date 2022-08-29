@@ -1,0 +1,577 @@
+2022 - 08 - 19
+
+1 - Introdução ao PHP
+
+			é uma linguagem server side (lado servidor) que foi criada em 1994 para uso pessoal
+			e que  em 1996 passou a ter um grande crescimento no novo mundo da internet.
+			atualmente antre 80 a 90% das aplicações server side no mundo, rodam em PHP.
+
+			Suporta comuniação com grande numero de SGBDS (Sistemas Gerenciadores de Bancos de Dados)
+			entre eles, MySQL, PostGreSQL, Oracle, Sybase, Firebird, etc...
+
+			É multiplataforma e tem suporte a maioria dos sisttemas operacioansi existntes no mercado (microsoft, Unix
+			Linux, MacOs, ETC..)
+
+			Seu codigo fica armazenado apenas no servidor, o que assegura maior confiabilidade e no 
+			armazenamento das informações uma vez que entrega apenas a renderização HTML no lado do cliente.
+
+			É código livre e por isso não requer o pagamentopara sua utilização e seu "core" pode ser alterado
+			pelos usuários na medida de cada necessidade.
+
+			É uma Linguagem interpretda e não presisa ter o codigo compilado.
+
+2 - Sintaxe
+
+			DELIMITANDO O CÓDIGO
+
+					O Codigo PHP fica embutido no próprio HTML e p interpretador identifica quando é um codigo PHP
+					pelas seguintes TAGS:
+
+				----------------------------------------------
+
+					<?php
+						Set de comandos...
+					?>
+
+				-----------------------------------------------
+
+					<cript language="php">
+						set de comandos...
+					</script>
+
+				-----------------------------------------------
+
+					<? 
+						set de comandos...
+					?>
+
+				-----------------------------------------------
+
+					<%               // ASP -> servidores IIS -> Microsoft
+						set de comandos...
+					%>
+
+				-----------------------------------------------
+
+					<script language="PHP">
+						set de comandos...
+					</script>
+
+		* Setup a nievel de servidor e cada datacenter define o padrão conforme o sistema operacional.
+
+			SEPARADOR DE INSTRUÇÕES:
+
+					Entre cada instruções PHP é presiso ultilizar o separador ponto-e-virgula, da mesma forma que em C,Perl e demais
+					linguagens.
+
+					COMENTÁRIOS EM PHP:
+
+					Existem dois tipos de indicadores de comentários em PHP: 
+					Comentarios para uma linha que podem ser:
+					 # Isto é um comentário 
+					 ou 
+					 // Isto é um comentário 
+
+					 Exemplo:
+					 <?php 
+					 	echo "teste"; //isto imprimir teste no navegador
+					 	echo "teste"; # esse teste faz a mesma coisa
+					 	// $sql "teste"
+					 ?>
+
+					 Comentários para mais que uma linha:
+
+					 ós delimitadores nesse caso são /*...*/, exemplo:
+					 <?php
+					 	echo "teste";
+					 	/* 
+					 		este e um comentário
+					 		em varias
+					 		linhas
+					 	*/
+					 ?>
+
+			IMPRIMINDO CODIGO HTML
+
+					Um script PHP tem como saida um resultado uma pagina HTML
+					ou um texto.
+
+					Para imprimir esse (Escrever na tela) resultado ultizamos
+					ás funções de impressão echo ou print.
+					Exemplo dessa sintaxe:
+
+						print(argumento);
+						ou
+						echo(argumento1, argumento2, argumento3...)
+						ou
+						echo argumento1;
+
+						exemplo prático:
+
+						<?php
+							$a = 10;
+							$b = 20;
+							$soma = $a  + $b
+
+							// imprimindo o resultado da soma na tela com o mandos print.
+
+							print("A soma é:".$soma."<p>");
+
+							/n    //Quebra de linha 
+
+							//Imprimindo ultilizando o echo em suas 3 maneiras possíveis
+
+
+							echo("A soma é:".$soma."<br>");
+							ou
+							echo $soma."".$b;
+						?>
+
+							//Input HTML com PHP
+
+							<input type="text" value="<?= $soma ?>"
+
+							//Apartir da versão 5 do PHP
+
+
+
+3 - Variáveis
+		
+		NOME DAS VARIÁVEIS 
+
+		Toda variável em PHP é iniciada pelo caracter $(dolar)
+		e uma string.
+
+		O PHP é CaseSensitive, Portanto $variavel, $Variavel e $VARIAVEL não são 
+		a mesma coisa.
+
+			** Evite declarar variáveis maiusculo, pois veremos a diante que o php possui algumas palavras
+			reservadas em maiúsuclo.
+
+		FORMAS DE DECLARAR VARIÁVEIS:
+
+		$variavel = declaração correta da variável;
+		 variavel = declaracao incorreta (resulta em erro)
+		_variável = forma incomun de utilização, mas se configurado no servidor
+		tambem pode ser ultilizado.
+
+		TIPOS SUPORTADOS:
+
+			O php suporta os tipos de dados a seguir:
+
+			- inteiro
+			- ponto flutuante
+			- string
+			- array
+			- objeto
+
+			O PHP utlilizar checagem de tipos dinânmica, isto é, uma variável pode conter valores de diferentes tipos em
+			diferentes momentos da execulção do código.
+			o interpretador verifica o conteudo em tempo de 
+			execulção e decide qual será o tipo daqueça variável.
+			ainda assim, é permitido converter valores de um tipo para outro conforme
+			desejado. (veremos detalhes adiante).
+
+				- inteiro (integer ou long)
+				uma variével pode conter um valor inteiro desde que sigam as seguintes sintaxes:
+
+				$inteiro = 1234;   //inteiro positivo em base decimal;
+				$inteiro = -1234;  //inteiro negativo em base decimal;
+				$inteiro = 0234;   //interiro na base ictal-simbolizado;
+				$inteiro = 0x34;   //inteiro na base hexadecimal;
+
+				- ponto flutuante (double ou float)
+				uma variável pode ter um valor em ponto flutuantedesde que sigam as seguintes sintaxes:
+
+				$flutuante = 1.234; // (4,3)
+				$flutuante = 23e4; // equivalente a 230.000 (6,3)
+
+				- String
+
+				Podem ser atribuidas de dias meneiras:
+					1. ultilizando aspas simples ('');
+						<?php
+							$string = 'Jovem programador SENAC 2022/2'
+						?>
+					2. utiizando aspas duplas ("");
+						<?php
+							$string = "Jovem programador SENAC 2022/2"
+							$string = "---$string---\n"
+							$pessoa = "Hercules"
+
+							echo "$teste";  //a saída será:
+											'---$string---\n'
+
+							echo "$teste"; // A saida será: 
+												Jovem programador Senac 2022/2 com
+												um quebra de linha no final
+						?>
+					CARACTERES DE ESCAPE:
+						Sintaxe | Significado
+						\n   nova linha
+						\r   retorno de carro (semelhante a \n)
+						\t   tubulação horizontal
+						\\   propria barra \
+						\$ o simbolo $ (dolar)
+						\'   aspas simples
+						\"   Aspas duplas
+
+					ARRAYS:
+					 arrays em php podem ser notadas como mapeamentos ou como vetores indexados (matrizes), em
+					 outras palavras array é um dicionário onde os indices são as chaves de acesso.
+
+					 arrays de qualquer tipo, não so de inteiros.
+
+					 Exemplo:
+
+					 <?php
+					 	$time[0] = "São paulo"
+					 	$time[1] = "flamengo"
+					 	$time[2] = "atletico mineiro"
+					 	$time[3] = "grêmio "
+					 	$time[4] = "Corinthians"
+					 	$time["Teste"] = 1;
+
+					 ?>
+
+					 Esta merma array pode ser escrita assim:
+
+					 	<?php 
+
+					 		$time = array(0 => "são paulo" 1=> "flamengo"...)
+
+
+					BOOLEANOS:
+
+						O PHP e capaz de avaliar expressões e retornar como resultado "true" ou "false"
+						através do tipo "integer". é usado o valor 0 (zero) para representar o estado
+						"false", e qualquer valor diferente disso (geralmente) é usado o 1 (um)) para
+						representar o estado "true".
+
+						TRANSFORMAÇÕES DE TIPOS:
+
+						a. Coerções - Quando ocorrem operações entre dois valores de tipos diferentes, o PHP
+						converte o valor de um deles automacamente, desde que esse valor nãpo seja uma varivel.
+						estas comversões  ocorrem da seguinte forma:
+						se o valor de um dos operandos for  float, o outro será convertido para float, senão , se
+						um deles for integer , o outros era convertido para integer.
+
+						Exemplo:
+
+							<?php
+								//declaração da variavel $prog
+
+								$prog = "1"; //$prog é a string "1"
+								$prog = $prog + 1; &prog é o integer 2
+								$prog = $prog + 3.7;//
+								&prog é o double 5.7
+								$prog = 1 + 1.5; //$prog é o double 2.5
+
+								echo "o valor de $prog e: $prog";
+
+							?>
+---------------------------------------------------
+	LAÇOS FOREACH
+
+TEMOS 3 FORMAS DE UTILIZAR O FOREACH, QUE SÃO:
+
+FORMA 1 - 
+	
+	foreach($variavel_array as $valor)
+		{
+			set de comandos...
+		}
+
+	
+	foreach($variavel_array as $chave=> $valor)
+		{
+			set de comandos...
+		}
+
+
+	foreach($variavel_array as $valor)
+		
+			set de comandos...
+		endforeach;
+----------------------------------------------------
+
+FUNÇÕES 
+
+A construção elementar de uma função em PHP segue esta estrutura.
+
+	function nome_da_função ($argumento_1,$argumento2,$argumento_3){
+	
+		intrusção....1;
+		intrusção....1;
+		....
+		....
+		instrução ....1;
+		return $resultado; varivel de retorno
+
+	}
+-------------------------------------------
+function ImprimirConceito()
+        	{
+            $conceito = "Aprovado!";
+        	echo ("Seu Conceito e: ");
+            echo $conceito."<br>";
+            }
+            
+         function ImprimirConceito1(){
+         	$conceito_1 = "vish! pestio o lagarto";
+          	echo ("Você não estudo o seu conceito agora é");
+          	echo $conceito_1."<br>";
+            }
+            
+           ImprimirConceito();
+----------------------------------------------------
+	PASSAGEM DE ARGUMENTO POR REFERÊNCIA
+
+	Na passagem de argumento por referÊncia, qualquer
+alteração efetuada dentro da função (na variavel que foi enviada )
+resultara em uma ltereação também na variavel de origem.
+
+
+
+
+
+EXERCICIOS PRÁTICOS:
+
+	Criar um novo arquivo .php com o seguinte código:
+	<html lang="pt-br">
+	<head></head>
+
+EXEMPLO PRÁTICO DO LAÇO FOREACH:
+
+	$minha_array = array('valor1','valor2','valor3','valor4');
+	
+	//Este e um laço simples;
+
+	foreach($minha_array as $meu_valor)
+		{
+			echo $meu_valor.<br>
+		}
+
+
+----------- ESTRUTURAS DE CONTROLE
+
+BLOCOS -> Bloco em programação é um conjunto de instruções cujo objetivo é redirecionado o usuario para um destino 
+ou outro na aplicaçao.
+
+Exemplo prático:
+
+	<?php
+
+	if ($x == $y)
+    	{
+    		set de instrução;
+		set de instrução;
+    	}
+        ?>
+
+ESTRUTURA IF / ELSE / ELSEIF
+
+Sintaxes:
+
+	if(expressão){
+		comando;
+		};
+
+
+	if(expressão){
+		set de instruções;
+		...
+		...
+		set de instruções;
+			}
+	
+EXEMPLO PRÁTICO:
+
+	$a = 10 //declarei o valor para &a;
+	$b = 20 //declarei o valor para &b;
+
+	if ($a > $b)
+	{ 
+		echo "O valor de $a e:".$a + $b;	
+	}
+
+2.
+
+	<?php
+
+		$a = 10 //declarei o valor para &a;
+		$b = 20 //declarei o valor para &b;
+
+		if ($a>=$b)
+		{ 
+			$media = ($a + $b)/2;
+			$resto = $a % &b; //Calcula o Resto da divisão de a/b
+			echo "O valor de A e:".$a "<br>";
+			echo "O valor de B e:".$b "<br>";
+			echo "O valor da media e:".$media "<br>";
+			echo "O resto da divisão e:".$resto;
+		}
+
+ELSE - Nada mais e do que um complemento opcional para o if.
+
+	sintaxe:
+
+		<?php
+		
+			if(expressão)
+				set de comandos...
+			else
+				set de comandos...;
+
+		ou
+
+			if(expressão){
+				comando 1;
+				comando 2;
+				...
+				comando 3;
+			}else{
+				comando 1;
+				comando 2;
+				...
+				comando 3;
+			}
+....PROSEGUINDO
+
+	Em algumas situações é necessário testar várias condições, exemplo:
+
+	if (expressão1)
+	comandos...
+	else
+		if (expressão2){
+		comandos...
+		}else{
+			if(expressão3)
+			comandos...
+			
+				}etc..{	
+
+					etc..
+
+
+
+	* podemos simplificar utilizando o mandos else if
+
+
+---------------- ESTRUTURA DE CONTROLE SWITCH CASE:
+
+	O comando swite funciona de maneira similar ao uso de varias estruturas If na mesma expressão.
+em casos determinados podemos pressisar comparar uma variável com diversos valores. e apresentar
+resultados ou codigos distintos para cada situação.
+
+SINTAXE:
+
+	swich ($valor){
+
+		case "__";
+			comandos...;
+			comandos...;
+		case "__";
+			comandos...;
+			comandos...;
+		case "__";
+			comandos...;
+			comandos...;
+		break;
+		default;
+			comandos...;
+	}
+-------------------
+	switch($i){
+        	case 0:
+            	print "i é igual a zero!<br>";
+                break;
+            case 1:
+            	print "i e igual a um!<br>";
+                break;
+            case 2:
+            	print "i e igual a dois!";
+                break;
+                
+                default;
+                print "parou!";
+           
+        }
+
+EXEMPLOS PRATICOS (dois codigos para a mesma solução)
+
+EX1 estrutura if
+	
+	if($i == 0){
+        print "i e igual a zero...!";
+        
+        }elseif($i == 1){
+        print "i e igual a um";
+        }elseif($i == 2){
+        print "i e igual a dois";}
+----
+EX2 estrutura swite:
+
+
+ESTRUTURAS DE REPETIÇÃO -----------------------------
+
+	São ultilizados quandos nos programadores prezisamos testar 
+uma condição que se repete várias vezes.
+
+	WHILE -> é o laço estrutura de repetição (laço) mais simples.
+	ele testa uma condição ou um bloco de comandos até que o resultado seja falso.
+		(obs: da mesma meneira que o IF a CASE, Aceita duas formas de sintaxe)
+	
+	SINTAXE:
+-------------	
+	while(condição){
+		comandos...;
+		comandos...;
+		...
+		comandos..;
+	}
+
+	EXEMPLO PRÁTICO....
+---------
+	$a = 0;
+        
+		
+	    while($a <= 10){
+        	echo $a."<br>";
+            $a++;
+        }
+-------------------
+	DO WHILE -> 
+
+		do{
+ 			comandos...
+			comandos...
+			comandos...
+		}while(condição);
+-----------------
+	exemplo prático...
+		
+	$a = 10;
+        
+		do{
+        	
+           echo $a++;
+           echo "<br>";
+           
+      	 }while($a<=10);
+
+--------------------------------------------
+		
+	
+	
+	
+	
+		
+
+						
+
+
+
+
+ 
+
