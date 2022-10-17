@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Multas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="campo">
+                <form>
+                    <div class="textH1">
+                        <h1>SISTEMA DETRAN - SC</h1>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><label for="ivel">Digite sua velocidade:</label></td>
+                            <td class="campoNumber"><input type="number" name="vel" id="ivel" placeholder="Km/hs"> Km/hr</td>
+                        </tr>
+                        <tr>
+                            <td><label for="iatual">Sua velocidade Atual:</label></td>
+                            <td class="campoResul"><div id="iatual"></div></td>
+                        </tr>
+                        <tr>
+                            <td><input class="btn_verif" type="button" value="Verificar" id="iver"></td>
+                        </tr>
+                    </table>
+                </form>
+
+                <form class="campoAviso">
+                    <table>
+                        <tr>
+                            <td><label>Avisos!</label></td>
+                        </tr>
+                        <tr>
+                            <td id="tdAviso"><div id="iaviso"></div></td>
+                        </tr>
+                    </table>
+                </form>
+
+                <form class="campoMulta">
+                    <table>
+                        <tr>
+                            <td><label>Multas e Infrações:</label></td>
+                        </tr>
+                        <tr>
+                            <td id="tdMulta"><div id="iMulta"></div></td>
+                        </tr>
+                             <td id="tdMulta1"><div id="iMulta1"></div></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

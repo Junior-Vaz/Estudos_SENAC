@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgb(10, 67, 105);
+        }
+        button{
+            width: 50px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border: 0;
+            padding: 5px;
+        }
+        .modal{
+            display: block;
+            width: 500px;
+            height: 400px;
+            background-color: blueviolet;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 20px;
+        }
+        h1{
+            background-color: rgb(25, 180, 128);
+            color: rgb(156, 6, 149);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            font-size: medium;
+        }
+        ul{
+            padding-left:  30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: rgb(68, 13, 121);
+            color: white;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        span{
+            margin-left: 225px;
+            background-color: rgb(72, 13, 128);
+            color: white;
+            padding: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="abrir()">Click!</button>
+    <section>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            <div class="modal">
+                <div><h1>Categorias de Emergencias<span onclick="fechar()">fechar</span></h1></div>
+                <ul>
+                    <li>Hidraulico</li>
+                    <li>Segurnaça</li>
+                    <li>Encanamento</li>
+                </ul>
+                <ul>
+                    <li>Hidraulico</li>
+                    <li>Segurnaça</li>
+                    <li>Encanamento</li>
+                </ul>
+                <ul>
+                    <li>Hidraulico</li>
+                    <li>Segurnaça</li>
+                    <li>Encanamento</li>
+                </ul>
+                <ul>
+                    <li>Hidraulico</li>
+                    <li>Segurnaça</li>
+                    <li>Encanamento</li>
+                </ul>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sapiente iusto ut, consequuntur aliquid at veritatis ipsum vitae, voluptate exercitationem nisi officia molestias fuga odio, atque quasi enim! Quod, perferendis!</p>
+        </div>
+    </section>
+    
+    <script>
+        function abrir() {
+            let modal = document.querySelector('.modal')
+            modal.style.transition = '3s'
+            modal.style.display = 'block'
+                    }
+        function fechar() {
+            let modal = document.querySelector('.modal')
+            modal.style.display = 'none'
+        }
+
+        
+    </script>
+</body>
+</html>

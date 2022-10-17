@@ -1,0 +1,58 @@
+//function() constructor
+// expressão new
+//Criar um novo objeto
+//this keyword
+
+/*function Person(name) {
+    this.name = name
+    this.walk = function() {
+        return this.name + " está andando"
+    }
+}
+
+const mayk = new Person("Mayk")
+const joao = new Person("João")
+
+console.log(mayk.walk())
+console.log(joao.walk())*/
+
+
+class aluno {
+    constructor(nome,idade,nota){
+        this.nome = nome;
+        this.idade = idade;
+        this.nota = nota;
+        this.media = function() {
+            return nota + 10
+        }
+    }
+}
+
+
+function gerarDado() {
+    //criando variaveis ou arrays
+    let nomeAlun = "Maria";
+    let idadeAlun = 25;
+    let notaAlun = 20.5;
+    const aluna2 = ["Juliana",40,9.5,5]
+
+    //construindo
+    const novoAluno = new aluno (nomeAlun,idadeAlun,notaAlun);
+    const novoAluno2 = new aluno(aluna2[0],aluna2[1],aluna2[3],aluna2[4])
+    //retornando
+    console.log(novoAluno.nome + " " +  novoAluno.idade + " " + novoAluno.nota + " " + novoAluno.media())
+    console.log(novoAluno2.nome + " " +  novoAluno2.idade + " " + novoAluno2.nota + " " + novoAluno2.media())
+    
+    
+    if (novoAluno.nota >10) {
+        console.log(`Aluno(a) ${novoAluno.nome} Aprovado(a), Parabéns`)
+        while (novoAluno) {
+            console.log(novoAluno2)
+        }
+    }else{
+        console.log(`Aluno(a) ${novoAluno.nome} Reprovado(a), tente novamente`)
+    }
+}
+
+gerarDado()
+

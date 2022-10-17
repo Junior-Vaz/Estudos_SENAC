@@ -1,0 +1,172 @@
+<html lang="pt-br">
+	<head>
+			<meta charset="utf-8">
+			<title>Meu primeiro HTML</title>
+			<style>
+				*{
+					margin: 0px;
+					padding: 0px;
+					font-family: arial;
+				}
+
+				main{
+					background: url(asd.jpg);
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+					background-attachment: fixed;
+					width: 100vw;
+					height: 100vh;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					
+				}
+				section{
+					overflow: hidden;
+					display: flex;
+					justify-content: center;
+					align-content: center;
+					align-items: center;
+					width: 1000px;
+					margin: auto;
+					position: absolute;
+					background-color: white;
+					/*box-shadow: 4px 2px 15px #056088;*/
+				}
+				.login{
+					display: flex;
+					flex-direction: column;
+					align-content: center;
+					color: #035e87;
+					width: 1300px;
+					height: 400px;
+					padding: 20px;
+					margin-right: 0px;
+				}
+				.buttom_login{
+					width: 100%;
+					border: none;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					outline: none;
+					font-family: arial;
+					font-weight: 800;
+					font-size: 1em;
+					color: white;
+					background-color: #4d6d85;
+					cursor: pointer;
+				}
+				form{
+					width: 300px;
+					height: 390px;
+				}
+				.div_login{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					width: 100%;
+				}
+				.h1_login{
+					display: flex;
+					justify-content: center;
+					margin-bottom: 20px;
+					margin-top: 50px;
+				}
+				.text{
+					width: 100%;
+					border: 0.1px solid #4d6d85;
+					margin: 0;
+					margin-bottom: 10px;
+					padding: 10px 10px 10px 20px;
+					font-size: 1em;
+					outline: none;
+					font-weight: 100;
+					font-family: arial;
+					color: black;
+					background-color: white;
+				}
+				.image{
+					margin-top: 35px;
+					width: 100%;
+				}
+				img{
+					
+				}
+				.div_image{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					grid-gap: 50px;
+					background: url(asdd.png);
+					background-size: cover;
+					background-position: right center;
+					padding: 20px;
+					height: 450px;
+					width: 85%;
+					text-align: center;
+					font-size: 1.6em;
+					font-family: cursive;
+					box-shadow:  1px 1px 8px black;
+				}
+			</style>
+	</head>
+	<body>
+		<header>
+			
+		</header>
+		<main>
+
+			<section>
+			<div class="div_image">
+				<img src="logo.png" width="200px" height="100px">
+				<h5>Bem vindo ao USP <br>
+				Cadastre-se e torne-se<br> um de nós!</h5>
+			</div>
+				<div class="login">
+							<div class="h1_login">
+								<h1>Creat Account</h1>
+							</div>
+							<div class="div_login">
+								<form method="post" autocomplete="on" action="conexão.php">
+											<label>Usuário*:</label>
+											<input class="text" type="name" name="$usuario" id="idusuario" placeholder="🔑 Login:">
+												<br>
+												<label>Senha*:</label>
+											<input class="text" type="password" name="senha" id="idsenha" placeholder="🔒 Senha:">
+												<br>	
+										<a href="#"></a>	<input class="buttom_login" type="submit" name="btn_login" value="Sign Up"></a>
+								</form>			
+							</div>
+							<?php
+								$host = "https://g6.leovieira.dev.br:2087";
+								$login = "g6jp";
+								$senha = "C@nes2022";
+								$banco = "g6jp_junior";
+								$conexão = mysql_connect($host,$login,$senha); // aqui se unicia a conexçao com o banco de dados
+
+								mysql_select_db("g6jp_junior",$conexão); // aqui sera ultilizado  qual base de dados iremos trabalhar.
+
+								$insere1 = insert into login(usuario,senha) //variavel recebendo um insert
+											values('edgard','111111');
+
+								$insere2 =  insert into jp(id_usuario,nome,sobrenome,cpf) //variavel recebendo um insert
+											values(null,'junior','vaz','08534222288');
+
+								mysql_query($insere1, $conexão) or die("insert não realizadoo"); // variavel recebendo o valor do insert mostrando na tela,
+								mysql_query($insere2, $conexão) or die("insert não realizadoo");// variavel recebendo o valor do insert mostrando na tela,.
+								
+								echo("insert inserido com sucesso!");
+								mysql_close($conexão);
+							?>
+				</div>
+			</section>
+		
+		</main>
+		<footer>
+			
+		</footer>
+	</body>
+</html>

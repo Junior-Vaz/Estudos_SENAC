@@ -1,0 +1,13 @@
+senha de acesso ao servidor:
+
+https://g6.leovieira.dev.br:2083/cwp_833ab9bee01b1105/g6jp/
+senha: C@nes2022
+
+ESTAR CONFORTÁVEL COM O PHP:
+
+C = CRIAR, inserir
+R = Select , consulta
+U = Update / atualizar
+D = Delete ou /dropar
+
+

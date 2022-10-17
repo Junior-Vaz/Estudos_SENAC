@@ -1,0 +1,205 @@
+TRABALHANDO COM PHP E HTML *
+
+Para trabalhamos com codigo PHP em formularios (HTML), devemos observar a utilização de alguns
+metodos/variaveis como $_POST e $_GET por exemplo.
+
+Nota: todos os campos do form a serem tratados pelo PHP deverão conter o parametro name, pois 
+em caso de omissão deste parametro os dados serão passados para o script PHP.
+
+Os métodos $_POST e $_GET são responsáveis por passar os valores dos forms.
+Nota: a diferença entre eles e que o $_POST realiza a troca de informações de 
+maneira transparente (não são visíveis na URL), enquanto o $_GET apresenta os dados na 
+URL.
+
+Variavel $_POST
+
+ esta variável recebe  as variaveis vindas do form pelo metodo POST.
+
+ SINTAXE: $_POST[campo do form] onde campo_do form que foi criado no Form cujo dado se deseja recuperar.
+
+ EXEMPLO PRÁTICO: 
+
+    <?php
+
+        $_POST[campo1];
+    ?>
+
+EXEMPLO PRÁTICO:
+
+ <FORM ACTION = "meu_primeiro_script.php" method = "Post">
+    campo1: <input type="text" name="campo1">
+    campo2 <input type="text" name="campo2">
+    <input type="submit" value="ok">
+</FORM>
+
+<?php
+    echo "O valor do campo1 é: ".$_POST[campo1];
+    echo "O valor do campo2 e: ".$_POST[campo2];
+?>
+
+PRIMEIRA EXPERIÊNCIA COM SERVIDOR php.
+
+1 - Criar um form HTML(form1.html)
+
+<html>
+    <head>
+        <title>Metodos PHP e form HTML<title>
+        <body>
+            <form name="form1" method="get" action="resposta_form1.php">
+                <p>Nome:<input type="text" name="nome" id="nome" size="50" maxlength="50"></p>
+                <p>Senha:<input type="passaword" name="senha" id='senha' size="20" maxlenghth="20"></p>
+                <p>cidade:<br></p>
+                <select name="cidade" id="cidade">
+                <option value="null">-------selecione-----</option>
+                <option value="videira">Videira</option>
+                <option value="iomere">Iomere </opion>
+                </select>
+                </p>
+                <p><input type="submit" value="enviar"></p>
+                </form>
+        </body>
+</html>
+
+
+* CONEXÃO COM O MYSQL:
+    Para conexões PHP com bancos de dados MySQL, utilizamos 4 comandos básicos, sendo que um realiza a conexão
+com o servidor, um que seleciona qual base de dados será conectada e outro que realiza consultas(query) SQl;
+por fim, o quarto comando é responsável por fechar a conexão.
+
+* ABRINDO E FECHANDO UMA CONEXÃO COM O MY SQL.
+    
+    Mysql_connect() / comando ultilizado para criar/iniciar a conexão com o banco de dados.
+    Mysql_pconnect /comando para iniciar uma conexão permanente.
+
+    Sintaxe:
+
+      *  mysql_connect(string[host[:porta]],string[login]),
+         string[senha] [or die("mensagem informando ERRO")];
+
+        onde:
+
+            *string[host[:porta]] //eo endereço e porta do servidor;
+            *string[login] //usuario do banco de dados;
+            *string[senha] // senha do banco de dados;
+            *die // parametro opcional que exibe uma informação indicando que a conexão não foi realizada;
+
+        Exemplo: 
+            <?php
+                $conexão = mysql_connect("localhost","root","focus") or die("A conexão não foi estabelecida!");  //abrindo conexão
+                ...
+                ...
+                ...
+                mysql_close($conexão);     //fechando conexão
+            ?>
+        
+   * mysql_select_db() // comando utilizado para indicar ap SGBDs com qual base de dados o programa trabalhara.
+
+   sintaxe:
+
+    mysql_select_db(bases_de_dados, [string de conexão])
+    or die[("não foi possivel conecar com a base informada")];
+
+    onde: * base_de_dados //e a base que sera ultilizada (um SGBD pode conter inumeras bases/bancos de dados);
+            string_de_conexão // e a conexão a ser estabelecida com o servidor mysql;
+            die //informação opcional para informar sobre possivel falha.
+
+            exemplo:
+----------------------------------------++
+            <?php 
+
+            $conexão = mysql_connect("localhost","root", "focus");
+
+            if($connexão){
+                die ("conexão não estabelecidade")
+            };
+            db_select = mysql_select_db("focus". $conexão);
+            ?>
+            
+    * mysql_query(); // comando que realiza consultas no DB.
+
+        sintaxe:
+
+            mysql_query(SELECT  *from cad_aluno WHERE aluno_id = 0109);
+
+---------------------------------------------------------------------------------++
+
+
+        * EXEMPLO PRATICO:
+        <?php
+            $conexão = mysql_connect("localhost","root","senac"); // aqui se unicia a conexçao com o banco de dados
+
+            mysql_select_db("senac",$conexão); // aqui sera ultilizado  qual base de dados iremos trabalhar.
+
+            $insere1 = "insert into alunos(id,nome,cidade) //variavel recebendo um insert
+                        values(1, 'leandro','videira');
+
+            $insere2 =  "insert into alunos(id,nome,cidade) //variavel recebendo um insert
+                        values(2, 'alex','caçador');
+
+            $insere3 = "insert into alunos(id,nome,cidade) //variavel recebendo um insert
+                        values(3, 'igor','fraiburgo');
+
+            mysql_query($insere1, $conexão) or die("insert não realizadoo"); // variavel recebendo o valor do insert mostrando na tela,.
+
+            mysql_query($insere2, $conexão) or die("insert não realizadoo");// variavel recebendo o valor do insert mostrando na tela,.
+
+
+            mysql_query($insere3, $conexão) or die("insert não realizadoo");// variavel recebendo o valor do insert mostrando na tela
+
+            mysql_query ($delete, $conexão);   // comando para deletar.
+            mysql_close($conexão);
+            echo(""); 
+            
+        
+
+    exercicio: 
+    1. comentar cada instrução sql
+    2. apos comentar, criar variaveis para os dados de conexão empregadndop estas
+    variaveis;
+    3. oque deve ser impreso no comando echo();
+    4. cfechar o pragrama,
+
+    * MAIS INSTRUÇÕES PHP COM BANCOS DE DADOS
+
+            mais instruções de acesso e tratamento aos dados oriundos de bancos de dados
+            mysql_fetch_assoc - utilizado para recuperar informações e apresentalas em um array.
+
+            Exemplo prático:
+
+            <?php 
+                //parametros de conexão com o Database
+
+                $variaveis_de_conexão_db;
+
+                //Seleção do database
+                mysql_select_db($banco_pet,$conexão_db);
+
+                //query de busca de dados SELECT
+
+                $query_rs_pet = "SELECT *from clientesPet";
+
+                //Verifica se conexão foi realizado
+                $rs_pet = mysql_query($query_rs_pet, $conexão_db) or die (mysql_error().'<br>' "Debug na query pet");
+
+                //estrutura array com os resultados do database
+                $row_rs_pet = mysql_fetch_assoc($rs_pet);
+
+                //conta total de registros retornados.
+                $totalRows_rs_pet = mysql_num_rows($rs_pet);
+                
+            ?>
+
+        * EXEMPLO DE TELA DE CADASTRO (PETSHOP)
+        
+        <?php
+        $var_conex;
+
+        if(){
+        $insertSQL = sprintf("INSERT INTO pet (id, nome_pet,raca) VALUES (%s,%s,%s)",
+        ($_POST['id']),
+        ($_POST['nom_pet']),
+        ($_POST['raca']));
+
+        mysql_select_db($database, $conex);
+        $result1 = mysql_query($inserSQL,$connect) or die(mysql_error);
+        ?>

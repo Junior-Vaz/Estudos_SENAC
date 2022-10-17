@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Metodos PHP e form HTML</title>
+	<style>
+		body{
+			display: flex;
+			justify-content: center;
+		}
+		form{
+			background-color: blueviolet;
+			border:  0px solid;
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: 600;
+			width: 500px;
+			padding: 20px;
+			border-radius: 15px;
+		}
+		td{
+			padding: 3px;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<form name="form1" method="get" action="resposta_form1.php">
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><input class="campo" type="text" name="nome" id="nome" size="50" maxlength="50" required></td>
+			</tr>
+			<tr>
+				<td>Senha:</td>
+				<td><input class="campo" type="password" name="senha" id='senha' size="20" maxlenghth="20" required></td>
+			</tr>
+			<tr>
+				<td class="cidade">cidade:</td>
+				<td><select name="cidade" id="cidade" required>
+					<option value="null">-------selecione-----</option>
+					<option value="videira">Videira</option>
+					<option value="iomere">Iomere </opion>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="enviar"></td>
+			</tr>
+		</table>
+		</form>
+
+		<?php
+			$connect = mysql_connect("localhost","root","user") or die("Não foi possivel fazer a conexão"); // aqui se unicia a conexçao com o banco de dados
+
+			mysql_select_db("user",$connect); //aqui sera ultilizado qual base iremos trabalhar
+			
+			$insere1 = insert into alunos(id,nome,cidade)
+							values(1, 'rodrigo','caçador');
+
+			$insere1 = insert into alunos(id,nome,cidade)
+							values(2, 'maria','fraiburgo');
+
+			$insere1 = insert into alunos(id,nome,cidade)
+							values(3, 'leandro','videira');
+
+			$mysql_query(mysql_query($insere1, $conexão) or die("insert não realizadoo"); // variavel recebendo o valor do insert mostrando na tela,.)
+			$mysql_query(mysql_query($insere2, $conexão) or die("insert não realizadoo"); // variavel recebendo o valor do insert mostrando na tela,.)
+			$mysql_query(mysql_query($insere3, $conexão) or die("insert não realizadoo"); // variavel recebendo o valor do insert mostrando na tela,.)
+
+			mysql_query ($delete, $conexão);   // comando para deletar.
+			echo(""); 
+
+			mysql_close($conexão); //fechando conexão
+
+
+		?>
+		</body>
+</html>
